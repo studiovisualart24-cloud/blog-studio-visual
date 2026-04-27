@@ -1,6 +1,6 @@
 ---
 title: Por que sua empresa não aparece no Google?
-date: 2026-04-27T17:28:04.780Z
+date: 2026-04-27T18:26:23.135Z
 description: Descubra como ser encontrado no Google e vender mais
 image: capa-do-site-1.png
 ---
