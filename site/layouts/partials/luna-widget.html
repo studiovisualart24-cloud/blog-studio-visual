@@ -1,0 +1,46 @@
+<!-- Luna – consultora virtual de Marketing Digital do Studio Visual MKT -->
+<link rel="stylesheet" href="/css/luna-widget.css">
+
+<!-- Formulário oculto apenas para o Netlify Forms detectar o schema no build.
+     O envio real é feito pela função serverless netlify/functions/luna-chat.js
+     quando a Luna registra um lead durante a conversa. -->
+<form name="luna-lead" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="luna-lead">
+  <input name="bot-field">
+  <input type="text" name="nome">
+  <input type="text" name="contato">
+  <input type="text" name="empresa">
+  <input type="text" name="segmento">
+  <input type="text" name="cidade">
+  <input type="text" name="servico_interesse">
+  <textarea name="resumo"></textarea>
+</form>
+
+<div class="luna-widget" id="luna-widget">
+  <div class="luna-panel" id="luna-panel" role="dialog" aria-label="Chat com a Luna">
+    <div class="luna-header">
+      {{ partial "luna-avatar" (dict "class" "luna-avatar") }}
+      <div class="luna-header-text">
+        <div class="luna-name">Luna</div>
+        <div class="luna-role">Consultora virtual · Studio Visual MKT</div>
+      </div>
+      <button type="button" class="luna-close" id="luna-close" aria-label="Fechar chat">×</button>
+    </div>
+
+    <div class="luna-messages" id="luna-messages"></div>
+
+    <div class="luna-chips" id="luna-chips"></div>
+
+    <form class="luna-input-row" id="luna-form">
+      <input type="text" id="luna-input" placeholder="Digite sua mensagem…" autocomplete="off">
+      <button type="submit" class="luna-send" id="luna-send">Enviar</button>
+    </form>
+  </div>
+
+  <button type="button" class="luna-toggle" id="luna-toggle" aria-label="Abrir chat com a Luna">
+    {{ partial "luna-avatar" (dict "class" "") }}
+    <span class="luna-badge"></span>
+  </button>
+</div>
+
+<script src="/js/luna-widget.js" defer></script>

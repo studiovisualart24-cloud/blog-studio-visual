@@ -1,10 +1,15 @@
 [build.environment]
   NETLIFY_USE_YARN = "true"
   YARN_VERSION = "1.22.17"
+  NODE_VERSION = "20"
 
 [build]
   command = "yarn build"
   publish = "dist"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
 
 [context.deploy-preview]
   command = "yarn build:preview"
