@@ -251,6 +251,11 @@
   border-color: var(--luna-gold);
 }
 
+.luna-input-row input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .luna-send {
   background: var(--luna-gold);
   border: none;
